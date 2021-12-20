@@ -2,7 +2,6 @@ import requests
 import os
 import argparse
 from dotenv import load_dotenv
-load_dotenv()
 
 
 def shorten_link(token, url, group_guid, domain):
@@ -56,6 +55,7 @@ def is_bitlink(token, url):
 
 
 def main():
+    load_dotenv()
     bitly_token = os.getenv("BITLY_TOKEN")
     group_guid = os.getenv("GROUP_GUID")
     domain = os.getenv("DOMAIN", "bit.ly")
